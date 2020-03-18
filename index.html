@@ -1,0 +1,26 @@
+<html>
+  <head>
+  </head>
+  <body>
+
+    <div id="container">
+    </div>
+
+    <script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    // public_path should point to the directory containing the Ruffle files on your web server.
+    window.RufflePlayer.config = {
+      "public_path": "ruffle/",
+    };
+    window.addEventListener('DOMContentLoaded', (event) => {
+      let ruffle = window.RufflePlayer.newest();
+      let player = ruffle.create_player();
+      let container = document.getElementById('container');
+      container.appendChild(player);
+      player.stream_swf_url("sneeze.swf");
+    });
+  </script>
+  <script src="ruffle/ruffle.js"></script>
+
+  </body>
+</html>
